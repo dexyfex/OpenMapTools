@@ -44,6 +44,7 @@
             this.InputFolderTextBox = new System.Windows.Forms.TextBox();
             this.ProcessButton = new System.Windows.Forms.Button();
             this.BrowseFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.VehicleCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label8
@@ -87,7 +88,7 @@
             this.OffsetYTextBox.Name = "OffsetYTextBox";
             this.OffsetYTextBox.Size = new System.Drawing.Size(68, 20);
             this.OffsetYTextBox.TabIndex = 37;
-            this.OffsetYTextBox.Text = "-3256.298";
+            this.OffsetYTextBox.Text = "0";
             // 
             // label5
             // 
@@ -113,7 +114,7 @@
             this.OffsetXTextBox.Name = "OffsetXTextBox";
             this.OffsetXTextBox.Size = new System.Drawing.Size(68, 20);
             this.OffsetXTextBox.TabIndex = 35;
-            this.OffsetXTextBox.Text = "5188.185";
+            this.OffsetXTextBox.Text = "0";
             // 
             // label2
             // 
@@ -177,11 +178,22 @@
             this.ProcessButton.UseVisualStyleBackColor = true;
             this.ProcessButton.Click += new System.EventHandler(this.ProcessButton_Click);
             // 
+            // VehicleCheckBox
+            // 
+            this.VehicleCheckBox.AutoSize = true;
+            this.VehicleCheckBox.Location = new System.Drawing.Point(112, 190);
+            this.VehicleCheckBox.Name = "VehicleCheckBox";
+            this.VehicleCheckBox.Size = new System.Drawing.Size(61, 17);
+            this.VehicleCheckBox.TabIndex = 41;
+            this.VehicleCheckBox.Text = "Vehicle";
+            this.VehicleCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 289);
+            this.Controls.Add(this.VehicleCheckBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.OffsetZTextBox);
@@ -222,6 +234,7 @@
         private System.Windows.Forms.TextBox InputFolderTextBox;
         private System.Windows.Forms.Button ProcessButton;
         private System.Windows.Forms.FolderBrowserDialog BrowseFolderDialog;
+        private System.Windows.Forms.CheckBox VehicleCheckBox;
     }
 }
 

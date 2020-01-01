@@ -67,6 +67,7 @@ namespace VONV
             float offsety = float.Parse(OffsetYTextBox.Text, CultureInfo.InvariantCulture);
             float offsetz = float.Parse(OffsetZTextBox.Text, CultureInfo.InvariantCulture);
             Vector3 offset = new Vector3(offsetx, offsety, offsetz);
+            var vehc = VehicleCheckBox.Checked;
 
             if (!outputpath.EndsWith("\\"))
             {
@@ -220,8 +221,27 @@ namespace VONV
                 }
             }
 
-
-            var ynvs = builder.Build(false);
+            List<YnvFile> ynvs = null;
+            if (vehc)
+            {
+                ynvs = new List<YnvFile>();
+                foreach (var onv in onvlist)
+                {
+                    builder.PolyList.Clear();
+                    foreach (var poly in onv.Polys)
+                    {
+                        var ypoly = poly.NewPoly;
+                        builder.PolyList.Add(ypoly);
+                    }
+                    builder.VehicleName = onv.Name;
+                    var ynv = builder.Build(true);
+                    ynvs.AddRange(ynv);
+                }
+            }
+            else
+            {
+                ynvs = builder.Build(false);
+            }
 
             foreach (var ynv in ynvs)
             {
